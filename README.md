@@ -14,7 +14,6 @@ The project was converted to an SDK-style `net10.0` csproj; game references come
 
 Build (needs .NET 10 SDK): `dotnet build -c Release` — output goes to `Mods/AllowTool/v1.7/Assemblies/`.
 
-HugsLib 12 is still a net472 build that references `UnityEngine.CoreModule` & co. by assembly name. The game redirects those names to `UnityStubs.dll`
-at runtime; for the compiler, `Tools/UnityFacades/` holds tiny generated type-forwarding assemblies that do the same thing (see the csproj comment there for how to regenerate).
+HugsLib comes from the 1.7 port at https://github.com/anatolix/RimworldHugsLib (net10.0); its assembly is vendored under `lib/HugsLib/` because the upstream NuGet package is still the net472 build.
 
 The 1.6 assembly under `v1.6/` is kept as-is for older game versions.
